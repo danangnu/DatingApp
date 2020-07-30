@@ -25,4 +25,16 @@ export class NavComponent implements OnInit {
       console.log('Failed to login');
     });
   }
+
+  // tslint:disable-next-line: typedef
+  loggedIn() {
+    const token = localStorage.getItem('token');
+    return !!token;
+  }
+
+  // tslint:disable-next-line: typedef
+  logout() {
+    localStorage.removeItem('token');
+    console.log('Logged out');
+  }
 }
