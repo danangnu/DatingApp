@@ -14,21 +14,17 @@ export class MemberListComponent implements OnInit {
 
   constructor(private userService: UserService, private alertify: AlertifyService, private route: ActivatedRoute) { }
 
-  // tslint:disable-next-line: typedef
   ngOnInit() {
     this.route.data.subscribe(data => {
       this.users = data['users'];
     });
   }
 
-  // tslint:disable-next-line: typedef
-  // tslint:disable-next-line: comment-format
-  //loadUsers() {
+  // loadUsers() {
   //  this.userService.getUsers().subscribe((users: User[]) => {
   //    this.users = users;
   //  }, error => {
   //    this.alertify.error(error);
   //  });
-  // tslint:disable-next-line: comment-format
-  //}
+  // }
 }

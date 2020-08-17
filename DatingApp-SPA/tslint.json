@@ -2,6 +2,9 @@
   "extends": "tslint:recommended",
   "rules": {
     "no-string-literal": false,
+    "comment-format": false,
+    "no-shadowed-variable": false,
+    "object-literal-shorthand": false,
     "align": {
       "options": [
         "parameters",
@@ -96,7 +99,7 @@
       }
     },
     "typedef": [
-      true,
+      false,
       "call-signature"
     ],
     "typedef-whitespace": {

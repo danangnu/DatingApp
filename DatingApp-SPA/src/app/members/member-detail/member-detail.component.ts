@@ -17,7 +17,6 @@ export class MemberDetailComponent implements OnInit {
 
   constructor(private userService: UserService, private alertify: AlertifyService, private route: ActivatedRoute) { }
 
-  // tslint:disable-next-line: typedef
   ngOnInit() {
     this.route.data.subscribe(data => {
       this.user = data['user'];
@@ -36,7 +35,6 @@ export class MemberDetailComponent implements OnInit {
     this.galleryImages = this.getImages();
   }
 
-  // tslint:disable-next-line: typedef
   getImages() {
     const imageUrls = [];
     for (const photo of this.user.photos) {
@@ -50,15 +48,11 @@ export class MemberDetailComponent implements OnInit {
     return imageUrls;
   }
 
-  // tslint:disable-next-line: typedef
-  // tslint:disable-next-line: comment-format
-  //loadUser() {
-    // tslint:disable-next-line: no-string-literal
-  //  this.userService.getUser(+this.route.snapshot.params['id']).subscribe((user: User) => {
+  // loadUser() {
+  //   this.userService.getUser(+this.route.snapshot.params['id']).subscribe((user: User) => {
   //    this.user = user;
-  //  }, error => {
+  //   }, error => {
   //    this.alertify.error(error);
   //  });
-  // tslint:disable-next-line: comment-format
-  //}
+  // }
 }

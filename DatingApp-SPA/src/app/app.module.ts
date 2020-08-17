@@ -23,7 +23,6 @@ import { MemberDetailComponent } from './members/member-detail/member-detail.com
 import { MemberDetailResolver } from './_resolvers/member-detail.resolver';
 import { MemberListResolver } from './_resolvers/member-list.resolver';
 
-// tslint:disable-next-line: typedef
 export function tokenGetter() {
    return localStorage.getItem('token');
 }
@@ -58,7 +57,6 @@ export function tokenGetter() {
       NgxGalleryModule,
       JwtModule.forRoot({
          config: {
-            // tslint:disable-next-line: object-literal-shorthand
             tokenGetter: tokenGetter,
             allowedDomains: ['localhost:5000'],
             disallowedRoutes: ['localhost:5000/api/auth']
