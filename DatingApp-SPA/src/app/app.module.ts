@@ -57,7 +57,6 @@ export function tokenGetter() {
    ],
    imports: [
       BrowserModule,
-      TimeagoModule.forRoot(),
       HttpClientModule,
       FormsModule,
       ReactiveFormsModule,
@@ -74,7 +73,8 @@ export function tokenGetter() {
             allowedDomains: ['localhost:5000'],
             disallowedRoutes: ['localhost:5000/api/auth']
          }
-      })
+      }),
+      TimeagoModule.forRoot()
    ],
    providers: [
       ErrorInterceptorProvider,
