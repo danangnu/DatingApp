@@ -21,6 +21,6 @@ input[type=file] {
 }
 
 .img-text {
-    position: relative;
+    position: absolute;
     bottom: 30%;
 }

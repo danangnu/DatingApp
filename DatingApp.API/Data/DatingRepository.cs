@@ -37,7 +37,8 @@ namespace DatingApp.API.Data
 
         public async Task<Photo> GetPhoto(int id)
         {
-            var photo = await _context.Photos.IgnoreQueryFilters().FirstOrDefaultAsync(p => p.Id == id);
+            var photo = await _context.Photos.IgnoreQueryFilters()
+                .FirstOrDefaultAsync(p => p.Id == id);
 
             return photo;
         }
@@ -47,11 +48,12 @@ namespace DatingApp.API.Data
             var query = _context.Users.Include(p => p.Photos).AsQueryable();
 
             if (isCurrentUser)
+            {
+                // For current user the global filter is dissabled
                 query = query.IgnoreQueryFilters();
-            
-            var user = await _context.Users.FirstOrDefaultAsync(u => u.Id == id);
+            }
 
-            return user;
+            return await query.FirstOrDefaultAsync(u => u.Id == id);
         }
 
         public async Task<PagedList<User>> GetUsers(UserParams userParams)
